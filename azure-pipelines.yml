@@ -24,7 +24,7 @@ steps:
         echo "Please provide resource-groups.txt file with resource groups listed on a single line for each"
         exit 1
       fi
-      cat resource-groups.txt | while read line
+      cat resource-groups.txt | while read RG
       do
-        ./az-snap-disk
+        ./az-snap-disk -i -g $RG
       done
