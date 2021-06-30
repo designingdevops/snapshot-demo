@@ -1,0 +1,24 @@
+trigger: none
+pr: none
+pool:
+  vmImage: 'ubuntu-latest'
+schedules: 
+- cron: '0 0 * * *'
+  displayName: Daily snapshot
+  branches:
+   include:
+   - main
+  always: true
+
+steps:
+- task: AzureCLI@2
+  displayName: Azure CLI
+  inputs:
+    azureSubscription: 'SNAPSHOT_DEMO'
+    scriptType: bash 
+    scriptLocation: inlineScript
+    inlineScript: |
+      az --version
+      az account show
+      pwd
+      ./az-snap-disk
