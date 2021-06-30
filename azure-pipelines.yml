@@ -18,7 +18,13 @@ steps:
     scriptType: bash 
     scriptLocation: inlineScript
     inlineScript: |
-      az --version
       az account show
-      pwd
-      ./az-snap-disk
+      
+      if ! [ -f resource-groups.txt ]; then
+        echo "Please provide resource-groups.txt file with resource groups listed on a single line for each"
+        exit 1
+      fi
+      cat resource-groups.txt | while read line
+      do
+        ./az-snap-disk
+      done
