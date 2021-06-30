@@ -15,4 +15,7 @@ The pipeline reads in a file called resource-groups.txt.  This file provides the
 for the snapshot programming.  It should have one resource group per line.  Each line
 of this file will be processed and disks in that resource group will have snapshots created.
 
+There is currently a schedule on the pipeline that executes it daily at midnight.  It can also
+be executed manually in ADO.
+
 NOTE:  This is provided as example code and not tested for production use.
