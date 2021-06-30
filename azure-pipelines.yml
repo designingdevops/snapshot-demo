@@ -3,7 +3,7 @@ pr: none
 pool:
   vmImage: 'ubuntu-latest'
 schedules: 
-- cron: '45 16 * * *'
+- cron: '0 0 * * *'
   displayName: Daily snapshot
   branches:
    include:
