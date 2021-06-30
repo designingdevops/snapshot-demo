@@ -10,10 +10,11 @@ the source disk but this can be changed by using the -t parameter.  In this exam
 service connection name is "SNAPSHOT_DEMO".
 
 Also to run this unattended in a pipeline you will need to use the -i flag or else
-the program will prompt you before it continues.
+the program will prompt you before it continues which will cause your pipeline to hand until 
+it times out.  The example pipeline demonstrates this.
 
 The pipeline reads in a file called resource-groups.txt.  This file provides the input
-for the snapshot programming.  It should have one resource group per line.  Each line
+for the snapshot script.  It should have one resource group per line.  Each line
 of this file will be processed and disks in that resource group will have snapshots created.
 
 There is currently a schedule on the pipeline that executes it daily at midnight.  It can also
